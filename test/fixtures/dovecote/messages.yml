@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  body: MyString
+  reference: MyString
+  message_bird_id: MyString
+
+two:
+  body: MyString
+  reference: MyString
+  message_bird_id: MyString

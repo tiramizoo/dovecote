@@ -32,7 +32,6 @@ rake db:migrate
 mount Dovecote::Engine => "/dovecote", as: :dovecote
 ```
 
-
 ## configure Dovecote
 
 create file config/initializers/dovevote.rb
@@ -41,4 +40,12 @@ create file config/initializers/dovevote.rb
 Dovecote.access_key = "live_XXXXXXXXXXXXXXXX" # required, MessageBird access key
 Dovecote.originator = "YOUR-APP"              # optional, default: SMS
 Dovecote.unicode    = true                    # optional, default: false
+```
+
+Access key can be found in MessageBird.com -> Developers -> API access
+
+## Add Status Report URl in MessageBird.com -> Developers -> API settings
+
+```
+http://you-app-host.com/dovecote/update_status
 ```

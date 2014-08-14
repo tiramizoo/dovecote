@@ -218,7 +218,7 @@ module Dovecote
     end
 
     def valid?
-      phone_code && subscriber_number && subscriber_number.length.in?(7..11)
+      phone_code && subscriber_number && subscriber_number.length.in?(7..14) && ((phone_code.length + subscriber_number.length) <= 15)
     end
 
     def to_s

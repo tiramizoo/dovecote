@@ -52,7 +52,7 @@ module Dovecote
       refute Msisdn.new("009731234").valid?
 
       # too long
-      refute Msisdn.new("+48.123456789012").valid?
+      refute Msisdn.new("+48.123456789012345").valid?
 
       # bad format
       refute Msisdn.new("49.123-456-789").valid?

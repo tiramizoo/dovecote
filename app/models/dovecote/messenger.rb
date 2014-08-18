@@ -8,10 +8,6 @@ module Dovecote
       @client ||= MessageBird::Client.new(Dovecote.access_key)
     end
 
-    def datacoding
-      Dovecote.unicode ? "unicode" : "plain"
-    end
-
     def update_status(message)
       begin
         message = client.message(message.bird_id)
@@ -25,9 +21,9 @@ module Dovecote
       end
     end
 
-    def create_message(msisdn, body, reference = nil)
+    def create_message(msisdn, body, options = {})
       originator = Dovecote.originator || "SMS"
-      options = {reference:  reference, datacoding: datacoding}
+      options.reverse_merge!({datacoding: Dovecote.unicode ? "unicode" : "plain"}
 
       begin
         message = client.message_create(originator, msisdn, body, options)

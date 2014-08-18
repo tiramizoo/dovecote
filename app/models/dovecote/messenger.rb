@@ -23,7 +23,7 @@ module Dovecote
 
     def create_message(msisdn, body, options = {})
       originator = Dovecote.originator || "SMS"
-      options.reverse_merge!({datacoding: Dovecote.unicode ? "unicode" : "plain"}
+      options.reverse_merge!({datacoding: Dovecote.unicode ? "unicode" : "plain"})
 
       begin
         message = client.message_create(originator, msisdn, body, options)

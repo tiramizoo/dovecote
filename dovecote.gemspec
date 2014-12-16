@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Dovecote::VERSION
   s.authors     = ["Tomasz Mazur"]
   s.email       = ["defkode@gmail.com"]
-  s.homepage    = "http://www/messagebird.com"
+  s.homepage    = "http://www.messagebird.com"
   s.summary     = "Summary of Dovecote."
   s.description = "MessageBird Cage"
   s.license     = "MIT"

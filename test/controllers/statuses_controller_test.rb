@@ -2,9 +2,14 @@ require 'test_helper'
 
 module Dovecote
   class StatusesControllerTest < ActionController::TestCase
+
+    setup do
+      @routes = Engine.routes
+    end
+
     test "update raises error when required parameters are missing" do
       assert_raises ActionController::ParameterMissing do
-        get :update, use_route: :dovecote
+        get :update
       end
     end
 
@@ -25,7 +30,7 @@ module Dovecote
         statusDatetime: "2014-07-31T12:01:00+00:00"
       }
 
-      get(:update, params.merge(use_route: :dovecote))
+      get(:update, params)
       assert_response :success
 
       message.reload

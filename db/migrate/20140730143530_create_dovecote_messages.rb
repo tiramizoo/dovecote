@@ -8,7 +8,7 @@ class CreateDovecoteMessages < ActiveRecord::Migration
       t.string :bird_id, null: false
       t.string :status, null: false
 
-      %w(scheduled sent buffered delivered delivery_failed).each do |status|
+      %w(scheduled sent buffered delivered delivery_failed expired).each do |status|
         t.datetime :"#{status}_at", :datetime
       end
     end

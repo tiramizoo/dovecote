@@ -25,7 +25,7 @@ module Dovecote
 
       params = {
         id:             message.bird_id,
-        msisdn:         message.msisdn,
+        recipient:      message.msisdn,
         status:         "delivered",
         statusDatetime: "2014-07-31T12:01:00+00:00"
       }

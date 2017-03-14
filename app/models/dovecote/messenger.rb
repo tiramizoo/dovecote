@@ -29,11 +29,11 @@ module Dovecote
         message = client.message_create(originator, msisdn, body, options)
         message.recipients["items"].each do |item|
           Message.create!({
+            bird_id:            message.id,
+            msisdn:             item.recipient.to_s,
             body:               message.body,
             originator:         message.originator,
-            bird_id:            message.id,
-            reference:          (message.reference if message.reference.present?),
-            recipient:          item.recipient.to_s,
+            reference:          message.reference,
             status:             item.status,
             status_changed_at:  item.statusDatetime
           })

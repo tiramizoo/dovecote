@@ -16,7 +16,7 @@ module Dovecote
     test "update" do
       message = Message.create!({
         bird_id:   "1",
-        recipient: "48322100000",
+        msisdn:    "48322100000",
         body:      "test",
         status:    "sent",
         originator: "TEST",
@@ -25,7 +25,7 @@ module Dovecote
 
       params = {
         id:             message.bird_id,
-        recipient:      message.recipient,
+        msisdn:         message.msisdn,
         status:         "delivered",
         statusDatetime: "2014-07-31T12:01:00+00:00"
       }

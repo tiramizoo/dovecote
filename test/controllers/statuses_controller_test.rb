@@ -30,7 +30,7 @@ module Dovecote
         statusDatetime: "2014-07-31T12:01:00+00:00"
       }
 
-      get(:update, params)
+      get(:update, params: params)
       assert_response :success
 
       message.reload

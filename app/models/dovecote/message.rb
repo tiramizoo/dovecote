@@ -1,7 +1,5 @@
 module Dovecote
   class Message < ActiveRecord::Base
-    attr_accessor :status_changed_at
-
     Statuses = %w(scheduled sent buffered delivered expired delivery_failed)
 
     validates :body,       presence: true

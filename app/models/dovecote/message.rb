@@ -14,8 +14,7 @@ module Dovecote
 
     def status_changed_at=(datetime)
       return unless status
-      send(:"#{status}_at=", datetime)
+      self["#{status}_at"] = datetime
     end
   end
 end
-

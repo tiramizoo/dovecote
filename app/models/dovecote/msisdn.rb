@@ -226,12 +226,6 @@ module Dovecote
       "+#{phone_code}.#{subscriber_number}"
     end
 
-    def mobile?
-      Messenger.instance.client.lookup(self.to_s).type == "mobile"
-    rescue MessageBird::ErrorException => e
-      raise e.errors.first.description
-    end
-
     def self.phone_number_to_phone_code(phone_number)
       return unless phone_number
       PhoneCodes.detect { |phone_code, country_codes| phone_number.starts_with?("+#{phone_code}") }.try(:first)

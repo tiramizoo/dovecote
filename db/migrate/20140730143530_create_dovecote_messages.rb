@@ -1,4 +1,4 @@
-class CreateDovecoteMessages < ActiveRecord::Migration[5.1]
+class CreateDovecoteMessages < ActiveRecord::Migration[6.0]
   def change
     # https://developers.messagebird.com/docs/messaging
     create_table :dovecote_messages do |t|
